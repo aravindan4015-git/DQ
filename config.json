@@ -1,0 +1,15 @@
+{
+  "source_path": "data/source.parquet",
+  "target_path": "data/target.parquet",
+  "source_format": "parquet",
+  "target_format": "parquet",
+  "primary_keys": ["id"],
+  "tolerance": 0.01,
+  "output_dir": "validation_reports",
+  "transformations": {
+    "emp_id": "employee_id",
+    "full_name": "concat_ws(' ', first_name, last_name)",
+    "city_upper": "upper(city)",
+    "salary_with_bonus": "salary * 1.1"
+  }
+}
